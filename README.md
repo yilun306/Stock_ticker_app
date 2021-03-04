@@ -1,4 +1,4 @@
-# Financial_Portfolio_Calc
+# Stock Ticker
 
 ## Pulling private images from Docker Hub on GCP
 
