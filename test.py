@@ -8,4 +8,4 @@ nvda_df = yf.download('NVDA',
                       progress=False)
 
 # View the first fiew records
-nvda_df.head()
+print(nvda_df.head())
