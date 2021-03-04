@@ -4,7 +4,7 @@ import yfinance as yf
 from datetime import date, timedelta
 
 @click.command()
-@click.option('--name', prompt='Enter Stock Name: ',
+@click.option('--name', prompt='Enter Stock Name',
               help='The stock you want to check.')
 
 def show_data(name):
