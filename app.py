@@ -15,7 +15,7 @@ def show_data(name):
     d1 = today.strftime("%Y-%m-%d")
     d2 = prev.strftime("%Y-%m-%d") 
     # Specify Dataframe and download past months figures
-    nvda_df = yf.download("^TNX",
+    nvda_df = yf.download(name,
                       start=d2,
                       end=d1,
                       progress=False)
@@ -24,10 +24,12 @@ def show_data(name):
     print(nvda_df)
 
 def get_data():
-    COMPANIES = ['NVDA', 'GME', '^TNX', '^IXIC']
+    COMPANIES = ['FMC', 'GME', 'PTON', 'U', '^TNX', '^IXIC']
     portforlio_cmp = {
-                "GME":{"num_shares":10, "value":0.0, "weight":0.0, "weighted_beta":0.0},
-                "NVDA":{"num_shares":5, "value":0.0, "weight":0.0, "weighted_beta":0.0}
+                "GME":{"num_shares":4, "value":0.0, "weight":0.0, "beta":0.0, "weighted_beta":0.0},
+                "FMC":{"num_shares":8, "value":0.0, "weight":0.0, "beta":0.0, "weighted_beta":0.0},
+                "U":{"num_shares":4, "value":0.0, "weight":0.0, "beta":1.16, "weighted_beta":0.0},
+                "PTON":{"num_shares":8, "value":0.0, "weight":0.0, "beta":0.31, "weighted_beta":0.0}
                     }
 
     # Set Object
@@ -54,7 +56,10 @@ def get_data():
     portforlio_beta = 0.0
     for stock in portforlio_cmp:
         portforlio_cmp[stock]["weight"] = float(data[stock]['prices'][-1]['close']) * portforlio_cmp[stock]["num_shares"] / total_asset_price
-        portforlio_cmp[stock]["weighted_beta"] = portforlio_cmp[stock]["weight"] * float(stats_data[stock]['beta'])
+        if stats_data[stock]['beta'] is None:
+            portforlio_cmp[stock]["weighted_beta"] = portforlio_cmp[stock]["weight"] * portforlio_cmp[stock]["beta"]
+        else:
+            portforlio_cmp[stock]["weighted_beta"] = portforlio_cmp[stock]["weight"] * float(stats_data[stock]['beta'])
         portforlio_beta += portforlio_cmp[stock]["weighted_beta"]
 
         
@@ -65,3 +70,8 @@ def get_data():
 if __name__ == '__main__':
     # show_data()
     get_data()
+
+    # name = 'PTON'
+    # yfs = YahooFinancials(name)
+    # stats_data = yfs.get_key_statistics_data()
+    # print(stats_data[name]['beta'])
