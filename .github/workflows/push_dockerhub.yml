@@ -76,7 +76,7 @@ jobs:
 #           docker push $IMAGE_ID:$VERSION
 
   push_to_registry:
-    needs: push
+    needs: test
     name: Push Docker image to Docker Hub
     runs-on: ubuntu-latest
     steps:
