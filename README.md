@@ -1,5 +1,7 @@
 # Stock Ticker
 
+[![Docker](https://github.com/yilun306/Stock_ticker_app/actions/workflows/push_dockerhub.yml/badge.svg?branch=main)](https://github.com/yilun306/Stock_ticker_app/actions/workflows/push_dockerhub.yml)
+
 ## Pulling private images from Docker Hub on GCP
 
 1. pull docker image from the DockerHub:
