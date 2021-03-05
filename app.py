@@ -26,7 +26,7 @@ def show_data(name):
 def get_data():
     COMPANIES = ['FMC', 'GME', 'PTON', 'U', '^TNX', '^IXIC']
     portforlio_cmp = {
-                "GME":{"num_shares":4, "value":0.0, "weight":0.0, "beta":0.0, "weighted_beta":0.0},
+                "GME":{"num_shares":2, "value":0.0, "weight":0.0, "beta":0.0, "weighted_beta":0.0},
                 "FMC":{"num_shares":8, "value":0.0, "weight":0.0, "beta":0.0, "weighted_beta":0.0},
                 "U":{"num_shares":4, "value":0.0, "weight":0.0, "beta":1.16, "weighted_beta":0.0},
                 "PTON":{"num_shares":8, "value":0.0, "weight":0.0, "beta":0.31, "weighted_beta":0.0}
