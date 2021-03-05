@@ -13,7 +13,7 @@ docker pull yilun306/financial_portfolio_calculator:latest
 docker run -it yilun306/financial_portfolio_calculator
 ```
 
-## Pushing images to Docker Hub from GCP
+## Pushing images to Docker Hub on GCP
 
 1. Storing Docker credentials in Secret Manager
 2. Configure the cloudbuild.yaml file:
