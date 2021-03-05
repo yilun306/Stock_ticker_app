@@ -9,4 +9,3 @@ nvda_df = yf.download('NVDA',
 
 # View the first fiew records
 print(nvda_df.head())
-
