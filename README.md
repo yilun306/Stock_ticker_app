@@ -41,3 +41,14 @@ steps:
 ```bash
 gcloud builds submit --config cloudbuild.yaml .
 ```
+
+## Run locally using python virtual environment
+
+```bash
+virtualenv --python $(which python) venv
+
+source venv/bin/activate
+
+make
+```
+Note: Make sure to use Python version >= 3.6
